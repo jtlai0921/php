@@ -1,0 +1,18 @@
+<?php 
+/*
+ 创建数组方法二
+*/
+//$student[]=具体的值
+//如果省略索引值不写那么默认索引值就是整数，并且从0开始，一次向上！
+$student[]=10;
+$student[]='孙胜利';
+$student[]=true;
+$student[]=60.5;
+$student[]='';
+$student[]='';
+$student[]='';
+$student[]='';
+$student[]='';
+$student[]='';
+var_dump($student);
+?>

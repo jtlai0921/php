@@ -1,0 +1,22 @@
+一、cookie
+	1.向客户端电脑中设置Cookie
+	   setcookie ();
+	2.在服务器端上读取Cookie的内容
+	   $_COOKIE
+	3.将多维数组应用于Cookie中
+	   setcookie("member[name]",'孙胜利');
+	   setcookie("member[email]",'1205429372@qq.com');
+	4.删除Cookie
+	   setcookie("member",'',time()-1);
+	注意点：
+		使用setcookie删除cookie的时候，需要与当初设置cookie的时候参数一致！
+二、session
+	1.开启session
+		session_start();
+		1)开启一个会话
+			一个客户 到超市里面买东西 办会员卡！
+			
+		2)打开已经存在的会话
+			当这个客户 以后再到超市买东西的时候 根据上次办的卡号 买东西！
+			根据客户端传来的session id 把这个 session id 对应的数据 读取到 $_SESSION这个变量里面
+			

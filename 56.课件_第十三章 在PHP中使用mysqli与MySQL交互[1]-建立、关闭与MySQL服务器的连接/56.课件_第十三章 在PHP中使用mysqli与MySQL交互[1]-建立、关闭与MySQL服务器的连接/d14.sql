@@ -1,0 +1,39 @@
+-- phpMyAdmin SQL Dump
+-- version 4.0.4
+-- http://www.phpmyadmin.net
+--
+-- 主机: localhost
+-- 生成日期: 2014 年 12 月 02 日 07:48
+-- 服务器版本: 5.6.12-log
+-- PHP 版本: 5.4.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- 数据库: `d14`
+--
+CREATE DATABASE IF NOT EXISTS `d14` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `d14`;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `t1`
+--
+
+CREATE TABLE IF NOT EXISTS `t1` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `info` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

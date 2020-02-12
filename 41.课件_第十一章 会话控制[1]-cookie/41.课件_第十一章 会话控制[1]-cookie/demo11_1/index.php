@@ -1,0 +1,9 @@
+<?php 
+header('Content-type:text/html;charset=utf-8');
+/*
+var_dump(setcookie('name','孙胜利',time()+3600));
+var_dump(setcookie('email','1205429372@qq.com',time()+3600));
+*/
+var_dump(setcookie('member[name]','孙胜利',time()+3600));
+var_dump(setcookie('member[email]','1205429372@qq.com',time()+3600));
+?>

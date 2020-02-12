@@ -1,0 +1,16 @@
+<?php 
+header('Content-type:text/html;charset=utf-8');
+$file=fopen('test.txt','r');
+var_dump(fgets($file));
+var_dump(fgets($file));
+var_dump(fgets($file));
+var_dump(feof($file));
+var_dump(fgets($file));
+var_dump(feof($file));
+var_dump(fgets($file));
+var_dump(fgets($file));
+var_dump(fgets($file));
+var_dump(fgets($file));
+var_dump(fgets($file));
+var_dump(feof($file));
+?>

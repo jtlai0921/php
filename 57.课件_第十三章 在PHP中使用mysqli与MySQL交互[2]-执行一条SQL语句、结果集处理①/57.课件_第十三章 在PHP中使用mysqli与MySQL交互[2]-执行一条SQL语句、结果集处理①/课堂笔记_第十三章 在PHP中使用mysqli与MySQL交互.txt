@@ -1,0 +1,41 @@
+1.建立、关闭与MySQL服务器的连接
+	1)连接指定的mysql服务器
+       $mysqli_connect=@mysqli_connect($host, $user, $password,$database,$port);
+   2)连接错误时的提示
+       int mysqli_connect_errno ();//返回最后一次连接调用的错误代码
+       string mysqli_connect_error ();//返回一个字符串描述的最后一次连接调用的错误代码
+   3)设置默认字符编码
+       bool mysqli_set_charset ( mysqli $link , string $charset )
+   4)选择特定的数据库
+       bool mysqli_select_db ( mysqli $link , string $dbname);
+   5)关闭与mysql服务器的连接
+       bool mysqli_close ( mysqli $link );
+2.执SQL语句
+	1)对数据库执行一条SQL语句
+		1>mixed mysqli_query ( mysqli $link , string $query [, int $resultmode = MYSQLI_STORE_RESULT ] );
+			①对于insert，update，delete等不会返回数据的SQL语句，在执行没有错误时将返回true。
+			②对于返回数据的SQL语句执行成功的时候会返回结果集对象可以使用操作结果集对象的函数来从中获取数据
+	2)操作结果集对象的函数
+		1>从结果集对象中解析数据的常见函数
+			 ①以索引数组的方式获取一条记录的数据
+						   mixed mysqli_fetch_row ( mysqli_result $result );
+						   重复使用以获取下一条记录的数据
+			 ②以关联数组的方式获取一条记录的数据
+						   array mysqli_fetch_assoc ( mysqli_result $result );
+						   重复使用以获取下一条记录的数据
+			 ③以索引数组或关联数组的方式获取一条记录的数据
+						   mixed mysqli_fetch_array ( mysqli_result $result [, int $resulttype = MYSQLI_BOTH ] );
+						   重复使用以获取下一条记录的数据
+			 ④以索引数组或关联数组的方式获取全部记录的数据
+						   mixed mysqli_fetch_all ( mysqli_result $result [, int $resulttype = MYSQLI_NUM ] );
+			 ⑤返回结果集中的下一个字段信息
+						   object mysqli_fetch_field ( mysqli_result $result );
+			 ⑥返回一个代表结果集字段的对象数组
+						   array mysqli_fetch_fields ( mysqli_result $result );
+			 ⑦获取结果中行的数量
+						   int mysqli_num_rows ( mysqli_result $result );
+						   注意：如果使用MYSQLI_USE_RESULT模式则必须在获取完结果集才可使用该函数。
+		2>释放与一个结果集相关的内存
+			 返回的结果集在数据量很大的时候需要很多的内存支持，所以在操作完结果集的时候有必要立刻释放与一个结果集相关的内
+			 存， 释放之后，结果集就不可用了
+			 void mysqli_free_result ( mysqli_result $result );

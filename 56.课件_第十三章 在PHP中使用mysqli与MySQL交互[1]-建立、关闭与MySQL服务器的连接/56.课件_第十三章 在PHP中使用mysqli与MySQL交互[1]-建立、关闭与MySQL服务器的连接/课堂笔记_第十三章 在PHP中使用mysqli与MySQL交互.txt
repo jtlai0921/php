@@ -1,0 +1,12 @@
+1.建立、关闭与MySQL服务器的连接
+	1)连接指定的mysql服务器
+       $mysqli_connect=@mysqli_connect($host, $user, $password,$database,$port);
+   2)连接错误时的提示
+       int mysqli_connect_errno ();//返回最后一次连接调用的错误代码
+       string mysqli_connect_error ();//返回一个字符串描述的最后一次连接调用的错误代码
+   3)设置默认字符编码
+       bool mysqli_set_charset ( mysqli $link , string $charset )
+   4)选择特定的数据库
+       bool mysqli_select_db ( mysqli $link , string $dbname);
+   5)关闭与mysql服务器的连接
+       bool mysqli_close ( mysqli $link );

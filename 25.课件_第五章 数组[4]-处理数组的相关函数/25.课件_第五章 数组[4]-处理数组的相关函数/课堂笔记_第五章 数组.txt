@@ -1,0 +1,106 @@
+数组：
+	具体的见图解！
+一、数组类型
+	见图解！
+二、数组创建
+	方法一、
+		变量名称[索引值]=数据;
+		变量名称[]=数据;//不写索引值默认是 索引数组，从0开始
+	方法二、
+		变量名称=array(
+			索引值=>数据,
+			..........
+		);
+	数据里面还可放数组类型的数据，同一个数组中存储任何类型的数据
+	多维数组：
+		访问数值的方法
+		变量名称[索引值][索引值]....
+三、数组的遍历
+	遍历数组：每个都经历一遍的意思
+	1）for循环
+		用的比较少，因为有缺陷
+	2）foreach语句来实现遍历数组的目的
+		foreach(数组变量 as 变量1){
+			//每次循环执行的语句
+			变量1代表当前正在经历（访问）的数据
+		}
+		
+		foreach(数组变量 as 变量1=>变量2){
+			//每次循环执行的语句
+			变量1代表当前正在经历（访问）的数据的索引值
+			变量1代表当前正在经历（访问）的数据
+		}
+四、预定义超全局数组变量
+	已经定义好了（存在）的变量(存放的数据的类型是数组)。
+	超全局：超级全局变量，作用域（有效区域）！
+	
+	传递数据（提交数据）给服务器端主要两种方式
+	1.get方式
+		比如：
+		?参数名=参数值&参数名=参数值......
+		http://localhost/demo5_3/index.php?参数名=参数值
+		在服务器端（请求的php文件这边）可以通过$_GET来获取到
+		$_GET索引值为参数名，索引值对应的数据就是参数值
+	2.post方式
+		比如表单 post发送过来的！
+		可以通过$_POST来获取到!
+五、处理数组的相关函数
+	我们挑几个讲一下，并不是这几个重要其他的不重要，而通过这几个的学习让大家学会怎么通过查手册来使用数组相关的函数！
+	1)array_count_values
+		$array = array(1, "hello", 1, "world", "hello");
+		$arr=array_count_values($array);//函数返回数组类型的数据
+		print_r($array);//原来的数组不会受到任何影响
+	2)array_key_exists
+		$search_array = array('first' => 1, 'second' => 4);
+		var_dump(array_key_exists('second',$search_array));
+	3)array_search
+		$array = array(0 => 'blue', 1 => 'red', 2 => 'green', 3 => 'red',4=>15);
+		var_dump(array_search('15', $array,true));
+	4)count
+		$array = array(0 => 'blue', 1 => 'red', 2 => 'green', 3 => 'red',4=>15);
+		var_dump(count($array));
+	5)in_array
+		$os = array("Mac", "NT", "Irix", "Linux");
+		var_dump(in_array('Mac', $os));
+	6)list
+		$arr=array(60,80,100);
+		list($sunshengli,$xiaohong,$xiaoming)=array(60,80,100);
+		echo $sunshengli;
+	7)asort
+		$students=array(
+			'sunshengli'=>60,
+			'lilei'=>80,
+			'hanmeimei'=>100,
+			'zhangsan'=>90
+		);
+		asort($students);
+		print_r($students);
+		直接对数组里面的数据进行排序，第二个参数
+			SORT_REGULAR - 正常比较单元（不改变类型） 
+			SORT_NUMERIC - 单元被作为数字来比较 
+			SORT_STRING - 单元被作为字符串来比较 
+			SORT_LOCALE_STRING - 根据当前的区域（locale）设置来把单元当作字符串比较。
+	8)array_filter
+		function odd($var)
+		{
+			return($var % 2 == 1);
+		}
+
+		function even($var)
+		{
+			return($var % 2 == 0);
+		}
+
+		$array1 = array("a"=>1, "b"=>2, "c"=>3, "d"=>4, "e"=>5);
+		$array2 = array(6, 7, 8, 9, 10, 11, 12);
+
+		echo "Odd :\n";
+		print_r(array_filter($array1, "odd"));
+		echo "Even:\n";
+		print_r(array_filter($array2, "even"));
+	
+
+	
+	
+
+

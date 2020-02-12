@@ -1,0 +1,23 @@
+<?php
+/*
+ 创建数组方法三
+*/
+//$student=array(索引值=>具体的值,.......);
+$student=array(10,'孙胜利',true,60.5);//一维数组
+var_dump($student);
+$student1=array(
+		0=>10,
+		1=>'孙胜利',
+		2=>true,
+		3=>60.5
+);
+var_dump($student1);
+$student2=array(
+		'num'=>11,
+		'name'=>'李雷',
+		'sex'=>true,
+		'grade'=>80.5,
+		10=>'dqwdwqdwq'
+);
+var_dump($student2);
+?>
